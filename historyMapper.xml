@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.HistoryMapper">
+
+
+    <insert id="updateHistory">
+        insert into t_history (PID,fromA, toA, amount) values (#{arg0},#{arg1},#{arg2},#{arg3})
+    </insert>
+
+    <insert id="updateHistory1">
+        insert into t_history (PID,fromA, amount) values (#{arg0},#{arg1},#{arg2})
+    </insert>
+
+
+</mapper>

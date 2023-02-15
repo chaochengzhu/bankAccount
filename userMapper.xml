@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.UserMapper">
+
+<!--    private String name;-->
+<!--    private Integer actno;-->
+<!--    private Character character;-->
+<!--    private Double balance;-->
+
+
+        <select id="userLogin" resultType="pojo.User">
+            select * from t_user where username=#{arg0} and password =#{arg1}
+        </select>
+
+        <insert id="addUser">
+            insert into t_user (username,password,sex,dob,PID,telephone,address)
+            values (#{username},#{password},#{sex},#{dob},#{PID},#{telephone},#{address})
+        </insert>
+
+        <select id="checkPID" resultType="String">
+             select * from t_user where PID=#{PID}
+        </select>
+
+        <select id="getMax" resultType="int">
+            select * from t_max;
+        </select>
+
+        <insert id="returnMax">
+            insert into t_max values (#{max});
+        </insert>
+
+        <delete id="deleteMax">
+            delete from t_max where max=#{max};
+        </delete>
+
+        <select id="checkUsername" resultType="String">
+            select * from t_user where username=#{username};
+        </select>
+
+
+</mapper>
